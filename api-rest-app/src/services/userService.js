@@ -18,7 +18,7 @@ const getAllUsers = () => {
     return users;
 };
 
-module.exports = {
+export default {
     createUser,
     getUser,
     getAllUsers

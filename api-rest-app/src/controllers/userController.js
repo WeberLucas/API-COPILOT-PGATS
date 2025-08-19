@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const userService = require('../services/userService');
+import userService from '../services/userService.js';
 
 router.get('/', (req, res) => {
     const users = userService.getAllUsers();
@@ -17,4 +17,4 @@ router.get('/:id', (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

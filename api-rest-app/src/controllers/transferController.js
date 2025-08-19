@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const transferService = require('../services/transferService');
+import transferService from '../services/transferService.js';
 
 router.post('/', (req, res) => {
     const { sender, recipient, amount } = req.body;
@@ -17,4 +17,4 @@ router.get('/history/:userId', (req, res) => {
     return res.status(200).json(history);
 });
 
-module.exports = router;
+export default router;

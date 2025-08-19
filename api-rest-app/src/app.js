@@ -1,10 +1,10 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('../swagger.json');
-const authRoutes = require('./controllers/authController');
-const userRoutes = require('./controllers/userController');
-const transferRoutes = require('./controllers/transferController');
+import express from 'express';
+import bodyParser from 'body-parser';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from '../swagger.json' assert { type: 'json' };
+import authRoutes from './controllers/authController.js';
+import userRoutes from './controllers/userController.js';
+import transferRoutes from './controllers/transferController.js';
 
 const app = express();
 
@@ -15,4 +15,4 @@ app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 app.use('/transfers', transferRoutes);
 
-module.exports = app;
+export default app;

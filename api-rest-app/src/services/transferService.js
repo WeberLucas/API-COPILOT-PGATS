@@ -38,11 +38,25 @@ const transferService = (() => {
         return transfers;
     };
 
+    const processTransfer = (sender, recipient, amount) => {
+        // Validação: remetente ou destinatário inválidos
+        if (!sender || !recipient || sender === "" || recipient === "") {
+            return { error: 'Sender or recipient not found' };
+        }
+        // Exemplo de regra de negócio
+        if (amount <= 0) {
+            return { error: 'Invalid amount' };
+        }
+        // Simula sucesso
+        return { sender, recipient, amount };
+    };
+
     return {
         addUser,
         createTransfer,
-        getTransfers
+        getTransfers,
+        processTransfer
     };
 })();
 
-module.exports = transferService;
+export default transferService;

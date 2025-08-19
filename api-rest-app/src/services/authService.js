@@ -29,7 +29,7 @@ const setUserFavored = (username) => {
     }
 };
 
-module.exports = {
+export default {
     registerUser,
     loginUser,
     getUsers,

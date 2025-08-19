@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const authService = require('../services/authService');
+import authService from '../services/authService.js';
 
 router.post('/register', (req, res) => {
     const { username, password } = req.body;
@@ -20,4 +20,4 @@ router.post('/login', (req, res) => {
     return res.status(200).json({ message: 'Login successful', token: result.token });
 });
 
-module.exports = router;
+export default router;
