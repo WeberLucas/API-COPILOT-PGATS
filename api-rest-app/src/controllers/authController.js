@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import authService from '../services/authService.js';
-
+//test
 router.post('/register', (req, res) => {
     const { username, password } = req.body;
     const result = authService.registerUser(username, password);
