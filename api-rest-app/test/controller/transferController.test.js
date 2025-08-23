@@ -39,6 +39,7 @@ describe('Transfer Controller', () => {
             expect(resposta.status).to.equal(200);
             expect(resposta.body).to.have.property('message', 'Transfer successful');
             expect(resposta.body).to.have.property('transfer');
+            console.log(resposta.body.transfer);
             sinon.restore();
         });
     });
